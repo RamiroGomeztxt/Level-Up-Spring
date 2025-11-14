@@ -1,4 +1,4 @@
-package model;
+package com.LevelUp.LevelUp.model;
 
 
 import jakarta.persistence.Entity;
