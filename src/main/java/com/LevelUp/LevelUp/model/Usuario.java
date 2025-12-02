@@ -1,14 +1,15 @@
 package com.LevelUp.LevelUp.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+
+@Builder
 @Entity
 @Data
 @AllArgsConstructor
@@ -20,9 +21,12 @@ public class Usuario {
     @GeneratedValue(strategy= GenerationType.AUTO)
         private Long id;
         private String nombre;
+
         private int edad;
+
+        @Column(unique = true) // Importante para que no se repitan emails
         private String email;
         private String clave1;
-        private String clave2;
         private String direccion;
+        private String rol;
 }
