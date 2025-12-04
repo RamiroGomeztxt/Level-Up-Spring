@@ -13,8 +13,8 @@ public class ProductoService {
 
     private final ProductoRepository productoRepository;
 
-    public Producto save(Producto p) {
-        return productoRepository.save(p);
+    public Producto save(Producto producto) {
+        return productoRepository.save(producto);
     }
 
     public List<Producto> findAll() {
@@ -27,5 +27,9 @@ public class ProductoService {
 
     public void deleteById(Long id) {
         productoRepository.deleteById(id);
+    }
+
+    public List<Producto>getProductosbyCategoria(String categoria){
+        return productoRepository.findByCategoria(categoria);
     }
 }

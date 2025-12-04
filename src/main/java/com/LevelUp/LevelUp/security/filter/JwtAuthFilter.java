@@ -40,6 +40,9 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
         // 1. Si no hay token o no empieza con Bearer, dejamos pasar la petición tal cual.
         // Spring Security (SecurityConfig) decidirá si la ruta necesita login o no.
+
+        System.out.println(request.getRequestURI());
+
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;

@@ -43,6 +43,7 @@ public class SecurityConfig {
                         // Permite Auth y ERROR (Vital para que no salga 403 mudo)
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/error").permitAll()
+                        .requestMatchers("/productos/getcategoria/**").permitAll()
 
                         // Documentación API (Opcional pero recomendado)
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**").permitAll()
@@ -80,6 +81,12 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+
+    @Bean
+    public UserDetailsService userDetailsService(CustomUserDetailsService customUserDetailsService) {
+        return customUserDetailsService;
     }
 
     @Bean

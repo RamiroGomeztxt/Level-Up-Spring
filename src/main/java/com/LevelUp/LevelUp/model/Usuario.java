@@ -24,7 +24,7 @@ public class Usuario {
 
         private int edad;
 
-        @Column(unique = true) // Importante para que no se repitan emails
+        @Column(unique = true)
         private String email;
         private String clave1;
         private String direccion;

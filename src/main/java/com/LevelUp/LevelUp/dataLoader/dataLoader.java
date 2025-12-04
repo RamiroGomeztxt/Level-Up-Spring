@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class DataLoader implements CommandLineRunner, LinkImages {
+public class dataLoader implements CommandLineRunner, LinkImages {
 
     @Autowired
     private ProductoRepository productoRepository;
@@ -29,10 +29,19 @@ public class DataLoader implements CommandLineRunner, LinkImages {
         List<Producto> productos = new ArrayList<>();
 
         productos.add(Producto.builder()
-                .nombre("Teclado Mecánico RGB HyperX Alloy Origins")
-                .categoria("Teclados")
-                .precio(89990)
+                .nombre("Teclado De Oficina HP")
+                .descripcion("Teclado de membrana especial para oficina y comodidad")
+                .categoria("consolas")
+                .precio("89990")
                 .imagen(teclado1)
                 .build());
+
+
+
+
+
+
+        productoRepository.saveAll(productos);
+
     }
 }
