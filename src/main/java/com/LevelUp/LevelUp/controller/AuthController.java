@@ -42,11 +42,6 @@ public class AuthController {
                 edad = Integer.parseInt(body.get("edad").toString());
             }
 
-            if(email.equals("admin@gmail.com")){
-                rol ="ADMIN";
-
-
-            }
             Usuario datosRegistro = Usuario.builder()
                     .email(email)
                     .clave1(clave1)
